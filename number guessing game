@@ -1,0 +1,125 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main(){
+   cout<<"\n\t\t\t\tWellcome!"<< endl;
+    cout<<"\t\t|| number Guessing Game||"<< endl;       
+    cout<<"\tYou have to guess a number between 1 and 50. "<< endl;
+    cout<< "\t\tYou'll have different level "<< endl;
+     cout<<"\t\t\t Good Luck!"<< endl;
+     while (true){
+        cout << "\nSee the different level: \n";
+        cout << "1  easy!\t";
+        cout << "2  medium!\t";
+        cout << "3  hard!\t";
+        cout << "0 for ending the game!\n" << endl;
+        int levelChoice,score=0;
+        cout << "Enter the number: ";
+        cin >> levelChoice;
+      // generating the lucky number
+        srand(time(0));
+        int luckyNumber = 1 + (rand() % 70);
+        int playerChoice;
+         if (levelChoice == 1) {
+            cout << "\nYou have 9 choices for finding the lucky number between 1 and 70.\n";
+            int choicesLeft = 9;
+            for (int i=1; i<=9;i++) {
+                cout << "Enter the number: \n";
+                cin >> playerChoice;
+                if (playerChoice == luckyNumber) {
+                    cout<<"congratulation! You won!\n";
+                    cout<<" you find the lucky number" << endl;
+                    score++;
+                    cout<<score<<"score\n";
+                    cout << "\t\t\t Thanks for playing....\n";
+                    cout << " you want to play the game again\n";
+                    break;
+                }
+                else {
+                    cout<< "sorry! you guesssed wrong number\n"; 
+                    if (playerChoice > luckyNumber) {
+                        cout << "The lucky number is smaller than the number you have chosen\n";
+                    }
+                    else {
+                        cout << "The lucky number is greater than the number you have chosen\n";
+                    }
+                    choicesLeft--;
+                    cout<< choicesLeft << "choices left\n";
+                    if (choicesLeft == 0) {
+                        cout << "You couldn't find the secret number\n";
+                         cout << "Play the game again to win!!!\n";
+                    }
+                }
+            }
+         }   if (levelChoice == 2) {
+             cout << "\nYou have 6 choices for finding the lucky number between 1 and 70\n";
+             int choicesLeft = 6;
+             for (int i=1; i<=6;i++) {
+                cout << "Enter the number: \n";
+                cin >> playerChoice;
+                if (playerChoice == luckyNumber) {
+                    cout<<"congratulation! You won!\n";
+                    cout<<" you find the lucky number" << endl;
+                                        score++;
+                    cout<<score<<"soure\n";
+                    cout << "\t\t\t Thanks for playing....\n";
+                    cout << " you want to play the game again\n";
+                    break;
+                }
+                else {
+                    cout<< "sorry! you guesssed wrong number\n"; 
+                    if (playerChoice > luckyNumber) {
+                        cout << "The lucky number is smaller than the number you have chosen\n";
+                    }
+                    else {
+                        cout << "The lucky number is greater than the number you have chosen\n";
+                    }
+                    choicesLeft--;
+                    cout<< choicesLeft << "choices left\n";
+                    if (choicesLeft == 0) {
+                        cout << "You couldn't find the secret number\n";
+                         cout << "Play the game again to win!!!\n";
+                    }
+                }
+            }   
+        } 
+        else if (levelChoice == 3) {
+            cout << "\nYou have 4 choices for finding the lucky number between 1 and 70\n";
+            int choicesLeft = 4;
+            for (int i=1; i<=4;i++) {
+                cout << "Enter the number: \n";
+                cin >> playerChoice;
+                if (playerChoice == luckyNumber) {
+                    cout<<"congratulation! You won!\n";
+                    cout<<" you find the lucky number" << endl;
+                                        score++;
+                    cout<<score<<"soure\n";
+                    cout << "\t\t\t Thanks for playing....\n";
+                    cout << " you want to play the game again\n";
+                    break;
+                }
+                else {
+                    cout<< "sorry! you guesssed wrong number\n"; 
+                    if (playerChoice > luckyNumber) {
+                        cout << "The lucky number is smaller than the number you have chosen\n";
+                    }
+                    else {
+                        cout << "The lucky number is greater than the number you have chosen\n";
+                    }
+                    choicesLeft--;
+                    cout<< choicesLeft << "choices left\n";
+                    if (choicesLeft == 0) {
+                        cout << "You couldn't find the secret number\n";
+                         cout << "Play the game again to win!!!\n";
+                    }
+               }
+            }
+      }
+      if(levelChoice == 0) {
+            exit(0);
+        }
+        else 
+          cout<<"Wrong choice Enter valid choice to play the Game(0,1,2,3)\n";
+     }
+}
